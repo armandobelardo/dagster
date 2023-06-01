@@ -103,6 +103,7 @@ class _ScheduleLaunchContext:
                         cron_schedule=state.instigator_data.cron_schedule,
                         start_timestamp=state.instigator_data.start_timestamp,
                         last_tick=self._tick,
+                        last_iteration_timestamp=self._tick.timestamp,
                     )
                 )
             )
@@ -452,7 +453,7 @@ def launch_scheduled_runs_for_schedule_iterator(
 
     instigator_origin_id = external_schedule.get_external_origin_id()
     instigator_data = cast(ScheduleInstigatorData, schedule_state.instigator_data)
-    start_timestamp_utc = instigator_data.start_timestamp
+    start_timestamp_utc: float = instigator_data.start_timestamp or 0
     latest_tick = instigator_data.last_tick
     if not latest_tick:
         # try to fetch the last tick
@@ -466,21 +467,22 @@ def launch_scheduled_runs_for_schedule_iterator(
             and latest_tick.failure_count <= max_tick_retries
         ):
             # Scheduler was interrupted while performing this tick, re-do it
-            start_timestamp_utc = (
-                max(start_timestamp_utc, latest_tick.timestamp)
-                if start_timestamp_utc
-                else latest_tick.timestamp
+            start_timestamp_utc = max(
+                start_timestamp_utc,
+                latest_tick.timestamp,
+                instigator_data.last_iteration_timestamp or 0.0,
             )
         else:
-            start_timestamp_utc = (
-                max(start_timestamp_utc, latest_tick.timestamp + 1)
-                if start_timestamp_utc
-                else latest_tick.timestamp + 1
+            start_timestamp_utc = max(
+                start_timestamp_utc,
+                latest_tick.timestamp + 1,
+                instigator_data.last_iteration_timestamp or 0.0,
             )
     else:
-        start_timestamp_utc = instigator_data.start_timestamp
-
-    start_timestamp_utc = check.not_none(start_timestamp_utc)
+        start_timestamp_utc = max(
+            start_timestamp_utc,
+            instigator_data.last_iteration_timestamp or 0.0,
+        )
 
     schedule_name = external_schedule.name
 
@@ -503,6 +505,19 @@ def launch_scheduled_runs_for_schedule_iterator(
     if not tick_times:
         if log_verbose_checks:
             logger.info(f"No new tick times to evaluate for {schedule_name}")
+
+        # insert last considered timestamp here
+        with schedule_state_lock:
+            instance.update_instigator_state(
+                schedule_state.with_data(
+                    ScheduleInstigatorData(
+                        cron_schedule=instigator_data.cron_schedule,
+                        start_timestamp=instigator_data.start_timestamp,
+                        last_tick=instigator_data.last_tick,
+                        last_iteration_timestamp=end_datetime_utc.timestamp(),
+                    )
+                )
+            )
         return
 
     if not external_schedule.partition_set_name and len(tick_times) > 1:

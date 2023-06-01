@@ -241,6 +241,7 @@ class ScheduleInstigatorData(
             ("cron_schedule", Union[str, Sequence[str]]),
             ("start_timestamp", Optional[float]),
             ("last_tick", Optional[InstigatorTick]),
+            ("last_iteration_timestamp", Optional[float]),
         ],
     )
 ):
@@ -250,6 +251,7 @@ class ScheduleInstigatorData(
         cron_schedule: Union[str, Sequence[str]],
         start_timestamp: Optional[float] = None,
         last_tick: Optional[InstigatorTick] = None,
+        last_iteration_timestamp: Optional[float] = None,
     ):
         cron_schedule = check.inst_param(cron_schedule, "cron_schedule", (str, list))
         if not isinstance(cron_schedule, str):
@@ -262,7 +264,16 @@ class ScheduleInstigatorData(
             # `start_date` on partition-based schedules, which is used to define
             # the range of partitions)
             check.opt_float_param(start_timestamp, "start_timestamp"),
+            # The last tick timestamp, which stores the metadata needed to pick up any backfilling /
+            # failure retry logic for schedules so that the scheduler does not need to rely on the
+            # tick history.  This enables us to decouple the tick retention policy with any
+            # backfilling logic.
             check.opt_inst_param(last_tick, "last_tick", InstigatorTick),
+            # Time in UTC at which the schedule was last evaluated.  This is distinct from the last
+            # tick timestamp since it takes into account iterations where the schedule was evaluated
+            # and no ticks were deemed necessary.  This enables the cron schedule to change for
+            # running schedules and the previous iteration is not backfilled.
+            check.opt_float_param(last_iteration_timestamp, "last_iteration_timestamp"),
         )
 
 
