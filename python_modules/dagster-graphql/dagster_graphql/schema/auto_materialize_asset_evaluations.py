@@ -13,6 +13,8 @@ from dagster._core.definitions.auto_materialize_condition import (
     ParentMaterializedAutoMaterializeCondition,
     ParentOutdatedAutoMaterializeCondition,
 )
+from .asset_key import GrapheneAssetKey
+
 from dagster._core.definitions.partition import SerializedPartitionsSubset
 from dagster._core.scheduler.instigation import AutoMaterializeAssetEvaluationRecord
 
@@ -77,6 +79,11 @@ class GrapheneMissingAutoMaterializeCondition(graphene.ObjectType):
 
 
 class GrapheneParentOutdatedAutoMaterializeCondition(graphene.ObjectType):
+    parentAssetKey = graphene.Field(GrapheneAssetKey)
+    parentWillMaterialize = graphene.Field(graphene.Boolean)
+    differentPartitions = graphene.Field(graphene.Boolean)
+    differentRepositories = graphene.Field(graphene.Boolean)
+
     class Meta:
         name = "ParentOutdatedAutoMaterializeCondition"
         interfaces = (GrapheneAutoMaterializeConditionWithDecisionType,)
@@ -142,7 +149,11 @@ def create_graphene_auto_materialize_condition(
         )
     elif isinstance(condition, ParentOutdatedAutoMaterializeCondition):
         return GrapheneParentOutdatedAutoMaterializeCondition(
-            decisionType=condition.decision_type, partitionKeysOrError=partition_keys_or_error
+            decisionType=condition.decision_type,
+            partitionKeysOrError=partition_keys_or_error,
+            parentAssetKey=condition.parent_asset_key,
+            differentPartitions=condition.different_partitions,
+            differntRepositories=condition.different_repositories,
         )
     elif isinstance(condition, MaxMaterializationsExceededAutoMaterializeCondition):
         return GrapheneMaxMaterializationsExceededAutoMaterializeCondition(

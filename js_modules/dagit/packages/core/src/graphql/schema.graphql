@@ -3118,6 +3118,10 @@ type MissingAutoMaterializeCondition implements AutoMaterializeConditionWithDeci
 type ParentOutdatedAutoMaterializeCondition implements AutoMaterializeConditionWithDecisionType {
   decisionType: AutoMaterializeDecisionType!
   partitionKeysOrError: PartitionKeysOrError
+  parentAssetKey: AssetKey
+  parentWillMaterialize: Boolean
+  differentPartitions: Boolean
+  differentRepositories: Boolean
 }
 
 type MaxMaterializationsExceededAutoMaterializeCondition implements AutoMaterializeConditionWithDecisionType {

@@ -2398,6 +2398,10 @@ export type ParentMaterializedAutoMaterializeCondition = AutoMaterializeConditio
 export type ParentOutdatedAutoMaterializeCondition = AutoMaterializeConditionWithDecisionType & {
   __typename: 'ParentOutdatedAutoMaterializeCondition';
   decisionType: AutoMaterializeDecisionType;
+  differentPartitions: Maybe<Scalars['Boolean']>;
+  differentRepositories: Maybe<Scalars['Boolean']>;
+  parentAssetKey: Maybe<AssetKey>;
+  parentWillMaterialize: Maybe<Scalars['Boolean']>;
   partitionKeysOrError: Maybe<PartitionKeysOrError>;
 };
 
@@ -8554,6 +8558,24 @@ export const buildParentOutdatedAutoMaterializeCondition = (
       overrides && overrides.hasOwnProperty('decisionType')
         ? overrides.decisionType!
         : AutoMaterializeDecisionType.DISCARD,
+    differentPartitions:
+      overrides && overrides.hasOwnProperty('differentPartitions')
+        ? overrides.differentPartitions!
+        : true,
+    differentRepositories:
+      overrides && overrides.hasOwnProperty('differentRepositories')
+        ? overrides.differentRepositories!
+        : false,
+    parentAssetKey:
+      overrides && overrides.hasOwnProperty('parentAssetKey')
+        ? overrides.parentAssetKey!
+        : relationshipsToOmit.has('AssetKey')
+        ? ({} as AssetKey)
+        : buildAssetKey({}, relationshipsToOmit),
+    parentWillMaterialize:
+      overrides && overrides.hasOwnProperty('parentWillMaterialize')
+        ? overrides.parentWillMaterialize!
+        : true,
     partitionKeysOrError:
       overrides && overrides.hasOwnProperty('partitionKeysOrError')
         ? overrides.partitionKeysOrError!
