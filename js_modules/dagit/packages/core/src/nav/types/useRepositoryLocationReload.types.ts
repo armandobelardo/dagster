@@ -53,7 +53,7 @@ export type RepositoryLocationStatusQuery = {
 export type ReloadWorkspaceMutationVariables = Types.Exact<{[key: string]: never}>;
 
 export type ReloadWorkspaceMutation = {
-  __typename: 'DagitMutation';
+  __typename: 'WebserverMutation';
   reloadWorkspace:
     | {
         __typename: 'PythonError';
@@ -105,7 +105,7 @@ export type ReloadRepositoryLocationMutationVariables = Types.Exact<{
 }>;
 
 export type ReloadRepositoryLocationMutation = {
-  __typename: 'DagitMutation';
+  __typename: 'WebserverMutation';
   reloadRepositoryLocation:
     | {
         __typename: 'PythonError';

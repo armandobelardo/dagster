@@ -7,7 +7,7 @@ export type StartThisScheduleMutationVariables = Types.Exact<{
 }>;
 
 export type StartThisScheduleMutation = {
-  __typename: 'DagitMutation';
+  __typename: 'WebserverMutation';
   startSchedule:
     | {
         __typename: 'PythonError';
@@ -37,7 +37,7 @@ export type StopScheduleMutationVariables = Types.Exact<{
 }>;
 
 export type StopScheduleMutation = {
-  __typename: 'DagitMutation';
+  __typename: 'WebserverMutation';
   stopRunningSchedule:
     | {
         __typename: 'PythonError';
