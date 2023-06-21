@@ -8,7 +8,7 @@ from ..pipelines.subscription import GraphenePipelineRunLogsSubscriptionPayload
 from ..util import ResolveInfo, non_null_list
 
 
-class GrapheneDagitSubscription(graphene.ObjectType):
+class GrapheneWebserverSubscription(graphene.ObjectType):
     """The root for all subscriptions to retrieve real-time data from the Dagster instance."""
 
     class Meta:
