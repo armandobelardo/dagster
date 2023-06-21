@@ -33,7 +33,7 @@ export type SetConcurrencyLimitMutationVariables = Types.Exact<{
 }>;
 
 export type SetConcurrencyLimitMutation = {
-  __typename: 'DagitMutation';
+  __typename: 'WebserverMutation';
   setConcurrencyLimit: boolean;
 };
 
@@ -42,7 +42,7 @@ export type FreeConcurrencySlotsForRunMutationVariables = Types.Exact<{
 }>;
 
 export type FreeConcurrencySlotsForRunMutation = {
-  __typename: 'DagitMutation';
+  __typename: 'WebserverMutation';
   freeConcurrencySlotsForRun: boolean;
 };
 

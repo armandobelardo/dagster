@@ -966,7 +966,7 @@ export function buildExpectedLaunchBackfillMutation(
     },
     result: jest.fn(() => ({
       data: {
-        __typename: 'DagitMutation',
+        __typename: 'WebserverMutation',
         launchPartitionBackfill: {__typename: 'LaunchBackfillSuccess', backfillId: 'backfillid'},
       },
     })),
@@ -983,7 +983,7 @@ export function buildExpectedLaunchSingleRunMutation(
     },
     result: jest.fn(() => ({
       data: {
-        __typename: 'DagitMutation',
+        __typename: 'WebserverMutation',
         launchPipelineExecution: {
           __typename: 'LaunchRunSuccess',
           run: {

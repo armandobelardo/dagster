@@ -10,7 +10,7 @@ export type ComputeLogsSubscriptionVariables = Types.Exact<{
 }>;
 
 export type ComputeLogsSubscription = {
-  __typename: 'DagitSubscription';
+  __typename: 'WebserverSubscription';
   computeLogs: {
     __typename: 'ComputeLogFile';
     path: string;

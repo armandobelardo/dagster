@@ -23,7 +23,7 @@ export type ScheduleDryRunMutationVariables = Types.Exact<{
 }>;
 
 export type ScheduleDryRunMutation = {
-  __typename: 'DagitMutation';
+  __typename: 'WebserverMutation';
   scheduleDryRun:
     | {
         __typename: 'DryRunInstigationTick';
