@@ -25,7 +25,7 @@ export const GetScheduleQueryMock: MockedResponse<GetScheduleQuery> = {
   },
   result: {
     data: {
-      __typename: 'DagitQuery',
+      __typename: 'WebserverQuery',
       scheduleOrError: buildSchedule({
         id: 'foo',
         name: 'configurable_job_schedule',

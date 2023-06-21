@@ -63,7 +63,7 @@ export const buildWorkspaceQueryWithNoSchedulesOrSensors = (): MockedResponse<Ro
     },
     result: {
       data: {
-        __typename: 'DagitQuery',
+        __typename: 'WebserverQuery',
         workspaceOrError: buildWorkspace({
           locationEntries: [
             buildWorkspaceLocationEntry({
@@ -96,7 +96,7 @@ export const buildWorkspaceQueryWithScheduleAndSensor = ({
     },
     result: {
       data: {
-        __typename: 'DagitQuery',
+        __typename: 'WebserverQuery',
         workspaceOrError: buildWorkspace({
           locationEntries: [
             buildWorkspaceLocationEntry({
@@ -134,7 +134,7 @@ export const buildInstanceWarningQuery = (
     },
     result: {
       data: {
-        __typename: 'DagitQuery',
+        __typename: 'WebserverQuery',
         instance: buildInstance({
           daemonHealth: buildDaemonHealth({
             id: 'daemon-health',

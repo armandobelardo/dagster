@@ -22,7 +22,7 @@ const runGroupMock: MockedResponse<RunGroupPanelQuery, RunGroupPanelQueryVariabl
   },
   result: {
     data: {
-      __typename: 'DagitQuery',
+      __typename: 'WebserverQuery',
       runGroupOrError: buildRunGroup({
         rootRunId: 'r1',
         runs: [

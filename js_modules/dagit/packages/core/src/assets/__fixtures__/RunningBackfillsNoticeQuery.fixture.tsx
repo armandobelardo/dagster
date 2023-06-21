@@ -10,7 +10,7 @@ export const NoRunningBackfills: MockedResponse<RunningBackfillsNoticeQuery> = {
   },
   result: {
     data: {
-      __typename: 'DagitQuery',
+      __typename: 'WebserverQuery',
       partitionBackfillsOrError: {
         __typename: 'PartitionBackfills',
         results: [],

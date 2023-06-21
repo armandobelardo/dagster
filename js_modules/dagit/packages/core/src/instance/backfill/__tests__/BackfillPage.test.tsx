@@ -33,7 +33,7 @@ const mocks = [
       variables: {backfillId: mockBackfillId},
     },
     result: {
-      __typename: 'CloudDagitQuery',
+      __typename: 'CloudWebserverQuery',
       data: {
         partitionBackfillOrError: buildPartitionBackfill({
           assetBackfillData: buildAssetBackfillData({
@@ -102,7 +102,7 @@ describe('BackfillPage', () => {
         },
         result: {
           data: {
-            __typename: 'CloudDagitQuery',
+            __typename: 'CloudWebserverQuery',
             partitionBackfillOrError: buildPythonError({
               message: 'An error occurred',
             }),

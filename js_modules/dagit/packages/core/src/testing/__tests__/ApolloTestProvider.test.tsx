@@ -35,9 +35,9 @@ describe('ApolloTestProvider', () => {
     expect(result.length).toBe(1);
   });
 
-  it('allows overriding with mocked `DagitQuery` values', async () => {
+  it('allows overriding with mocked `WebserverQuery` values', async () => {
     const mocks = {
-      DagitQuery: () => ({
+      WebserverQuery: () => ({
         version: () => '1234',
       }),
     };

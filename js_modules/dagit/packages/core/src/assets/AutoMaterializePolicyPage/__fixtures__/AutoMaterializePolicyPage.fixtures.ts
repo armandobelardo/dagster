@@ -23,7 +23,7 @@ import {
 } from '../types/AssetAutomaterializePolicyPage.types';
 
 export function buildQueryMock<
-  TQuery extends {__typename: 'DagitQuery'},
+  TQuery extends {__typename: 'WebserverQuery'},
   TVariables extends Record<string, any>
 >({
   query,
@@ -41,7 +41,7 @@ export function buildQueryMock<
     },
     result: {
       data: {
-        __typename: 'DagitQuery',
+        __typename: 'WebserverQuery',
         ...data,
       } as TQuery,
     },

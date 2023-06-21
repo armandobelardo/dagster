@@ -16,7 +16,7 @@ export const ReleasesWorkspace: MockedResponse<LaunchAssetWarningsQuery> = {
   },
   result: {
     data: {
-      __typename: 'DagitQuery',
+      __typename: 'WebserverQuery',
       assetNodes: [],
       instance: buildInstance({
         daemonHealth: buildDaemonHealth({

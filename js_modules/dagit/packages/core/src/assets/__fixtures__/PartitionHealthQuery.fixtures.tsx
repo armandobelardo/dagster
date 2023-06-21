@@ -23,7 +23,7 @@ export const buildPartitionHealthMock = (
   },
   result: {
     data: {
-      __typename: 'DagitQuery',
+      __typename: 'WebserverQuery',
       assetNodeOrError: buildAssetNode({
         id: `assets_dynamic_partitions.__repository__.["${assetKey}"]`,
         partitionKeysByDimension: [

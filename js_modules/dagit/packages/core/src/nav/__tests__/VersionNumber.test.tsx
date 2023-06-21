@@ -15,7 +15,7 @@ describe('VersionNumber', () => {
       },
       result: {
         data: {
-          __typename: 'DagitQuery',
+          __typename: 'WebserverQuery',
           version: '1.2.34',
         },
       },
