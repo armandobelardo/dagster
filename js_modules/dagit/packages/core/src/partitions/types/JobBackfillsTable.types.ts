@@ -10,7 +10,7 @@ export type JobBackfillsQueryVariables = Types.Exact<{
 }>;
 
 export type JobBackfillsQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   partitionSetOrError:
     | {
         __typename: 'PartitionSet';

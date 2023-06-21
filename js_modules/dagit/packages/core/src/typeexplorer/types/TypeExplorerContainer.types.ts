@@ -8,7 +8,7 @@ export type TypeExplorerContainerQueryVariables = Types.Exact<{
 }>;
 
 export type TypeExplorerContainerQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   pipelineOrError:
     | {__typename: 'InvalidSubsetError'}
     | {

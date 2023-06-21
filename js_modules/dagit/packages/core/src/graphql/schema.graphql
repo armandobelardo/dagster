@@ -1,5 +1,5 @@
 schema {
-  query: DagitQuery
+  query: WebserverQuery
   mutation: DagitMutation
   subscription: DagitSubscription
 }
@@ -2833,7 +2833,7 @@ type UsedSolid {
   invocations: [NodeInvocationSite!]!
 }
 
-type DagitQuery {
+type WebserverQuery {
   version: String!
   repositoriesOrError(repositorySelector: RepositorySelector): RepositoriesOrError!
   repositoryOrError(repositorySelector: RepositorySelector!): RepositoryOrError!

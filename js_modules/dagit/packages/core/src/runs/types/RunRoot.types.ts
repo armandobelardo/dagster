@@ -7,7 +7,7 @@ export type RunRootQueryVariables = Types.Exact<{
 }>;
 
 export type RunRootQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   pipelineRunOrError:
     | {__typename: 'PythonError'}
     | {

@@ -29,7 +29,7 @@ export type CapturedLogsMetadataQueryVariables = Types.Exact<{
 }>;
 
 export type CapturedLogsMetadataQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   capturedLogsMetadata: {
     __typename: 'CapturedLogsMetadata';
     stdoutDownloadUrl: string | null;
@@ -46,7 +46,7 @@ export type CapturedLogsQueryVariables = Types.Exact<{
 }>;
 
 export type CapturedLogsQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   capturedLogs: {
     __typename: 'CapturedLogs';
     stdout: string | null;

@@ -8,7 +8,7 @@ export type OpSelectorQueryVariables = Types.Exact<{
 }>;
 
 export type OpSelectorQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   pipelineOrError:
     | {__typename: 'InvalidSubsetError'; message: string}
     | {

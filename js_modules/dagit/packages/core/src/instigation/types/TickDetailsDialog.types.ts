@@ -8,7 +8,7 @@ export type SelectedTickQueryVariables = Types.Exact<{
 }>;
 
 export type SelectedTickQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   instigationStateOrError:
     | {
         __typename: 'InstigationState';

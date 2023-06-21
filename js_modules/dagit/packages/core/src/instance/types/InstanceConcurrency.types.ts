@@ -13,7 +13,7 @@ export type ConcurrencyLimitFragment = {
 export type InstanceConcurrencyLimitsQueryVariables = Types.Exact<{[key: string]: never}>;
 
 export type InstanceConcurrencyLimitsQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   instance: {
     __typename: 'Instance';
     id: string;
@@ -52,7 +52,7 @@ export type RunsForConcurrencyKeyQueryVariables = Types.Exact<{
 }>;
 
 export type RunsForConcurrencyKeyQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   pipelineRunsOrError:
     | {__typename: 'InvalidPipelineRunsFilterError'}
     | {

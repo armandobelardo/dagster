@@ -7,7 +7,7 @@ export type OpsRootQueryVariables = Types.Exact<{
 }>;
 
 export type OpsRootQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   repositoryOrError:
     | {__typename: 'PythonError'}
     | {

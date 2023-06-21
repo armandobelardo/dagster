@@ -5,7 +5,7 @@ import * as Types from '../../graphql/types';
 export type GetAutoMaterializePausedQueryVariables = Types.Exact<{[key: string]: never}>;
 
 export type GetAutoMaterializePausedQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   instance: {__typename: 'Instance'; id: string; autoMaterializePaused: boolean};
 };
 

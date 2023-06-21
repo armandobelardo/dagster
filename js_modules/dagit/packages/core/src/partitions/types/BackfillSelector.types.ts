@@ -7,7 +7,7 @@ export type BackfillSelectorQueryVariables = Types.Exact<{
 }>;
 
 export type BackfillSelectorQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   pipelineSnapshotOrError:
     | {__typename: 'PipelineNotFoundError'}
     | {

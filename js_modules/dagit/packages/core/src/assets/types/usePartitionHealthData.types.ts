@@ -7,7 +7,7 @@ export type PartitionHealthQueryVariables = Types.Exact<{
 }>;
 
 export type PartitionHealthQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   assetNodeOrError:
     | {
         __typename: 'AssetNode';

@@ -27,7 +27,7 @@ export type LaunchedRunListQueryVariables = Types.Exact<{
 }>;
 
 export type LaunchedRunListQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   pipelineRunsOrError:
     | {__typename: 'InvalidPipelineRunsFilterError'; message: string}
     | {

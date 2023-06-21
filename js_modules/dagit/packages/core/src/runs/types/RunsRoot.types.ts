@@ -9,7 +9,7 @@ export type RunsRootQueryVariables = Types.Exact<{
 }>;
 
 export type RunsRootQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   pipelineRunsOrError:
     | {__typename: 'InvalidPipelineRunsFilterError'; message: string}
     | {
@@ -57,7 +57,7 @@ export type RunsRootQuery = {
 export type QueueDaemonStatusQueryVariables = Types.Exact<{[key: string]: never}>;
 
 export type QueueDaemonStatusQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   instance: {
     __typename: 'Instance';
     id: string;

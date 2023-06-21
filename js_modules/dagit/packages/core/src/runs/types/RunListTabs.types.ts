@@ -8,7 +8,7 @@ export type RunTabsCountQueryVariables = Types.Exact<{
 }>;
 
 export type RunTabsCountQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   queuedCount:
     | {__typename: 'InvalidPipelineRunsFilterError'}
     | {__typename: 'PythonError'}

@@ -7,7 +7,7 @@ export type AssetGraphSidebarQueryVariables = Types.Exact<{
 }>;
 
 export type AssetGraphSidebarQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   pipelineSnapshotOrError:
     | {__typename: 'PipelineNotFoundError'; message: string}
     | {

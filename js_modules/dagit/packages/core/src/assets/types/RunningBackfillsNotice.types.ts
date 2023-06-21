@@ -5,7 +5,7 @@ import * as Types from '../../graphql/types';
 export type RunningBackfillsNoticeQueryVariables = Types.Exact<{[key: string]: never}>;
 
 export type RunningBackfillsNoticeQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   partitionBackfillsOrError:
     | {
         __typename: 'PartitionBackfills';

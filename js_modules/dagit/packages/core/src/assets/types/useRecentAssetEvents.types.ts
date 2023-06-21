@@ -277,7 +277,7 @@ export type AssetEventsQueryVariables = Types.Exact<{
 }>;
 
 export type AssetEventsQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   assetOrError:
     | {
         __typename: 'Asset';

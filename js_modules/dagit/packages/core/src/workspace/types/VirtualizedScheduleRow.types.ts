@@ -7,7 +7,7 @@ export type SingleScheduleQueryVariables = Types.Exact<{
 }>;
 
 export type SingleScheduleQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   scheduleOrError:
     | {__typename: 'PythonError'}
     | {

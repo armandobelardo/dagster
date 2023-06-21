@@ -7,7 +7,7 @@ export type AssetDefinitionCollisionQueryVariables = Types.Exact<{
 }>;
 
 export type AssetDefinitionCollisionQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   assetNodeDefinitionCollisions: Array<{
     __typename: 'AssetNodeDefinitionCollision';
     assetKey: {__typename: 'AssetKey'; path: Array<string>};

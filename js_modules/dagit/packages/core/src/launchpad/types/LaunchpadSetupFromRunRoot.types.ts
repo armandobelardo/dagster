@@ -7,7 +7,7 @@ export type ConfigForRunQueryVariables = Types.Exact<{
 }>;
 
 export type ConfigForRunQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   runOrError:
     | {
         __typename: 'PythonError';

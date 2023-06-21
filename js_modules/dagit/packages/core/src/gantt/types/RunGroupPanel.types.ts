@@ -7,7 +7,7 @@ export type RunGroupPanelQueryVariables = Types.Exact<{
 }>;
 
 export type RunGroupPanelQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   runGroupOrError:
     | {
         __typename: 'PythonError';

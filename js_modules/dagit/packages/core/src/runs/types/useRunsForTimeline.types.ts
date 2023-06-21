@@ -10,7 +10,7 @@ export type RunTimelineQueryVariables = Types.Exact<{
 }>;
 
 export type RunTimelineQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   unterminated:
     | {__typename: 'InvalidPipelineRunsFilterError'}
     | {__typename: 'PythonError'}

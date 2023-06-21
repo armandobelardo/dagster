@@ -8,7 +8,7 @@ export type UsedSolidDetailsQueryVariables = Types.Exact<{
 }>;
 
 export type UsedSolidDetailsQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   repositoryOrError:
     | {__typename: 'PythonError'}
     | {

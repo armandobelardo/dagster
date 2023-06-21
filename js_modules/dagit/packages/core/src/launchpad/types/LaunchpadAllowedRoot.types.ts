@@ -9,7 +9,7 @@ export type LaunchpadRootQueryVariables = Types.Exact<{
 }>;
 
 export type LaunchpadRootQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   pipelineOrError:
     | {__typename: 'InvalidSubsetError'}
     | {

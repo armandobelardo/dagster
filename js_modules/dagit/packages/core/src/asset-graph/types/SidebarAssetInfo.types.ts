@@ -15543,7 +15543,7 @@ export type SidebarAssetQueryVariables = Types.Exact<{
 }>;
 
 export type SidebarAssetQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   assetNodeOrError:
     | {
         __typename: 'AssetNode';

@@ -7,7 +7,7 @@ export type BackfillStatusesByAssetQueryVariables = Types.Exact<{
 }>;
 
 export type BackfillStatusesByAssetQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   partitionBackfillOrError:
     | {__typename: 'BackfillNotFoundError'; message: string}
     | {

@@ -4880,7 +4880,7 @@ export type RunLogsQueryVariables = Types.Exact<{
 }>;
 
 export type RunLogsQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   pipelineRunOrError:
     | {__typename: 'PythonError'}
     | {__typename: 'Run'; id: string; status: Types.RunStatus; canTerminate: boolean}

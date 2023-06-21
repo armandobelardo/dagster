@@ -10,7 +10,7 @@ export type GetScheduleQueryVariables = Types.Exact<{
 }>;
 
 export type GetScheduleQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   scheduleOrError:
     | {__typename: 'PythonError'; message: string; stack: Array<string>}
     | {__typename: 'Schedule'; id: string; name: string; potentialTickTimestamps: Array<number>}

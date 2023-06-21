@@ -7,7 +7,7 @@ export type PartitionRunListQueryVariables = Types.Exact<{
 }>;
 
 export type PartitionRunListQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   pipelineRunsOrError:
     | {__typename: 'InvalidPipelineRunsFilterError'; message: string}
     | {

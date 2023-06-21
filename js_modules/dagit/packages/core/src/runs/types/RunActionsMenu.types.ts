@@ -7,7 +7,7 @@ export type PipelineEnvironmentQueryVariables = Types.Exact<{
 }>;
 
 export type PipelineEnvironmentQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   pipelineRunOrError:
     | {__typename: 'PythonError'}
     | {

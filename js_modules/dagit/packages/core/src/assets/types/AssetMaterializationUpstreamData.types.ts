@@ -8,7 +8,7 @@ export type AssetMaterializationUpstreamQueryVariables = Types.Exact<{
 }>;
 
 export type AssetMaterializationUpstreamQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   assetNodeOrError:
     | {
         __typename: 'AssetNode';

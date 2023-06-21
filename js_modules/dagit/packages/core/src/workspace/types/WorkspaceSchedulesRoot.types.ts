@@ -7,7 +7,7 @@ export type WorkspaceSchedulesQueryVariables = Types.Exact<{
 }>;
 
 export type WorkspaceSchedulesQuery = {
-  __typename: 'DagitQuery';
+  __typename: 'WebserverQuery';
   repositoryOrError:
     | {
         __typename: 'PythonError';
