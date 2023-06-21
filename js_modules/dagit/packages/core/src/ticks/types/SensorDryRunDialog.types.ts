@@ -8,7 +8,7 @@ export type SensorDryRunMutationVariables = Types.Exact<{
 }>;
 
 export type SensorDryRunMutation = {
-  __typename: 'WebserverMutation';
+  __typename: 'DagitMutation';
   sensorDryRun:
     | {
         __typename: 'DryRunInstigationTick';

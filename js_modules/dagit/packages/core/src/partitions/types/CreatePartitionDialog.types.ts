@@ -9,7 +9,7 @@ export type AddDynamicPartitionMutationVariables = Types.Exact<{
 }>;
 
 export type AddDynamicPartitionMutation = {
-  __typename: 'WebserverMutation';
+  __typename: 'DagitMutation';
   addDynamicPartition:
     | {__typename: 'AddDynamicPartitionSuccess'; partitionsDefName: string; partitionKey: string}
     | {__typename: 'DuplicateDynamicPartitionError'}

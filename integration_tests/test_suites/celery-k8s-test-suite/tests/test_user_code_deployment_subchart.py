@@ -21,9 +21,11 @@ def test_execute_on_celery_k8s_subchart_disabled(
     core_api = kubernetes.client.CoreV1Api()
     batch_api = kubernetes.client.BatchV1Api()
 
-    # Get name for dagit pod
+    # Get name for dagster-webserver pod
     pods = core_api.list_namespaced_pod(namespace=namespace)
-    dagit_pod_list = list(filter(lambda item: "dagit" in item.metadata.name, pods.items))
+    dagit_pod_list = list(
+        filter(lambda item: "dagster-webserver" in item.metadata.name, pods.items)
+    )
     assert len(dagit_pod_list) == 1
     dagit_pod = dagit_pod_list[0]
     dagit_pod_name = dagit_pod.metadata.name

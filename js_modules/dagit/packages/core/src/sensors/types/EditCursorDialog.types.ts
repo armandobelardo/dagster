@@ -8,7 +8,7 @@ export type SetSensorCursorMutationVariables = Types.Exact<{
 }>;
 
 export type SetSensorCursorMutation = {
-  __typename: 'WebserverMutation';
+  __typename: 'DagitMutation';
   setSensorCursor:
     | {
         __typename: 'PythonError';

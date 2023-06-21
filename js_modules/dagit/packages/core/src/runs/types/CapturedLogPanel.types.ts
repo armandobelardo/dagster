@@ -8,7 +8,7 @@ export type CapturedLogsSubscriptionVariables = Types.Exact<{
 }>;
 
 export type CapturedLogsSubscription = {
-  __typename: 'WebserverSubscription';
+  __typename: 'DagitSubscription';
   capturedLogs: {
     __typename: 'CapturedLogs';
     stdout: string | null;

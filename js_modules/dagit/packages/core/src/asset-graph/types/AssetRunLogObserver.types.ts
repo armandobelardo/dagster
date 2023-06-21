@@ -7,7 +7,7 @@ export type AssetLiveRunLogsSubscriptionVariables = Types.Exact<{
 }>;
 
 export type AssetLiveRunLogsSubscription = {
-  __typename: 'WebserverSubscription';
+  __typename: 'DagitSubscription';
   pipelineRunLogs:
     | {__typename: 'PipelineRunLogsSubscriptionFailure'}
     | {

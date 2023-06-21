@@ -7,7 +7,7 @@ export type CancelBackfillMutationVariables = Types.Exact<{
 }>;
 
 export type CancelBackfillMutation = {
-  __typename: 'WebserverMutation';
+  __typename: 'DagitMutation';
   cancelPartitionBackfill:
     | {__typename: 'CancelBackfillSuccess'; backfillId: string}
     | {

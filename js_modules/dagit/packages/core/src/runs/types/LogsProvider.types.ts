@@ -8,7 +8,7 @@ export type PipelineRunLogsSubscriptionVariables = Types.Exact<{
 }>;
 
 export type PipelineRunLogsSubscription = {
-  __typename: 'WebserverSubscription';
+  __typename: 'DagitSubscription';
   pipelineRunLogs:
     | {
         __typename: 'PipelineRunLogsSubscriptionFailure';

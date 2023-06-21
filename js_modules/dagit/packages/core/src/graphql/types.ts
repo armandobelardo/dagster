@@ -547,8 +547,8 @@ export type DaemonStatus = {
   required: Scalars['Boolean'];
 };
 
-export type WebserverMutation = {
-  __typename: 'WebserverMutation';
+export type DagitMutation = {
+  __typename: 'DagitMutation';
   addDynamicPartition: AddDynamicPartitionResult;
   cancelPartitionBackfill: CancelBackfillResult;
   deletePipelineRun: DeletePipelineRunResult;
@@ -579,146 +579,146 @@ export type WebserverMutation = {
   wipeAssets: AssetWipeMutationResult;
 };
 
-export type WebserverMutationAddDynamicPartitionArgs = {
+export type DagitMutationAddDynamicPartitionArgs = {
   partitionKey: Scalars['String'];
   partitionsDefName: Scalars['String'];
   repositorySelector: RepositorySelector;
 };
 
-export type WebserverMutationCancelPartitionBackfillArgs = {
+export type DagitMutationCancelPartitionBackfillArgs = {
   backfillId: Scalars['String'];
 };
 
-export type WebserverMutationDeletePipelineRunArgs = {
+export type DagitMutationDeletePipelineRunArgs = {
   runId: Scalars['String'];
 };
 
-export type WebserverMutationDeleteRunArgs = {
+export type DagitMutationDeleteRunArgs = {
   runId: Scalars['String'];
 };
 
-export type WebserverMutationFreeConcurrencySlotsForRunArgs = {
+export type DagitMutationFreeConcurrencySlotsForRunArgs = {
   runId: Scalars['String'];
 };
 
-export type WebserverMutationLaunchPartitionBackfillArgs = {
+export type DagitMutationLaunchPartitionBackfillArgs = {
   backfillParams: LaunchBackfillParams;
 };
 
-export type WebserverMutationLaunchPipelineExecutionArgs = {
+export type DagitMutationLaunchPipelineExecutionArgs = {
   executionParams: ExecutionParams;
 };
 
-export type WebserverMutationLaunchPipelineReexecutionArgs = {
+export type DagitMutationLaunchPipelineReexecutionArgs = {
   executionParams?: InputMaybe<ExecutionParams>;
   reexecutionParams?: InputMaybe<ReexecutionParams>;
 };
 
-export type WebserverMutationLaunchRunArgs = {
+export type DagitMutationLaunchRunArgs = {
   executionParams: ExecutionParams;
 };
 
-export type WebserverMutationLaunchRunReexecutionArgs = {
+export type DagitMutationLaunchRunReexecutionArgs = {
   executionParams?: InputMaybe<ExecutionParams>;
   reexecutionParams?: InputMaybe<ReexecutionParams>;
 };
 
-export type WebserverMutationLogTelemetryArgs = {
+export type DagitMutationLogTelemetryArgs = {
   action: Scalars['String'];
   clientId: Scalars['String'];
   clientTime: Scalars['String'];
   metadata: Scalars['String'];
 };
 
-export type WebserverMutationReloadRepositoryLocationArgs = {
+export type DagitMutationReloadRepositoryLocationArgs = {
   repositoryLocationName: Scalars['String'];
 };
 
-export type WebserverMutationResumePartitionBackfillArgs = {
+export type DagitMutationResumePartitionBackfillArgs = {
   backfillId: Scalars['String'];
 };
 
-export type WebserverMutationScheduleDryRunArgs = {
+export type DagitMutationScheduleDryRunArgs = {
   selectorData: ScheduleSelector;
   timestamp?: InputMaybe<Scalars['Float']>;
 };
 
-export type WebserverMutationSensorDryRunArgs = {
+export type DagitMutationSensorDryRunArgs = {
   cursor?: InputMaybe<Scalars['String']>;
   selectorData: SensorSelector;
 };
 
-export type WebserverMutationSetAutoMaterializePausedArgs = {
+export type DagitMutationSetAutoMaterializePausedArgs = {
   paused: Scalars['Boolean'];
 };
 
-export type WebserverMutationSetConcurrencyLimitArgs = {
+export type DagitMutationSetConcurrencyLimitArgs = {
   concurrencyKey: Scalars['String'];
   limit: Scalars['Int'];
 };
 
-export type WebserverMutationSetSensorCursorArgs = {
+export type DagitMutationSetSensorCursorArgs = {
   cursor?: InputMaybe<Scalars['String']>;
   sensorSelector: SensorSelector;
 };
 
-export type WebserverMutationShutdownRepositoryLocationArgs = {
+export type DagitMutationShutdownRepositoryLocationArgs = {
   repositoryLocationName: Scalars['String'];
 };
 
-export type WebserverMutationStartScheduleArgs = {
+export type DagitMutationStartScheduleArgs = {
   scheduleSelector: ScheduleSelector;
 };
 
-export type WebserverMutationStartSensorArgs = {
+export type DagitMutationStartSensorArgs = {
   sensorSelector: SensorSelector;
 };
 
-export type WebserverMutationStopRunningScheduleArgs = {
+export type DagitMutationStopRunningScheduleArgs = {
   scheduleOriginId: Scalars['String'];
   scheduleSelectorId: Scalars['String'];
 };
 
-export type WebserverMutationStopSensorArgs = {
+export type DagitMutationStopSensorArgs = {
   jobOriginId: Scalars['String'];
   jobSelectorId: Scalars['String'];
 };
 
-export type WebserverMutationTerminatePipelineExecutionArgs = {
+export type DagitMutationTerminatePipelineExecutionArgs = {
   runId: Scalars['String'];
   terminatePolicy?: InputMaybe<TerminateRunPolicy>;
 };
 
-export type WebserverMutationTerminateRunArgs = {
+export type DagitMutationTerminateRunArgs = {
   runId: Scalars['String'];
   terminatePolicy?: InputMaybe<TerminateRunPolicy>;
 };
 
-export type WebserverMutationWipeAssetsArgs = {
+export type DagitMutationWipeAssetsArgs = {
   assetKeys: Array<AssetKeyInput>;
 };
 
-export type WebserverSubscription = {
-  __typename: 'WebserverSubscription';
+export type DagitSubscription = {
+  __typename: 'DagitSubscription';
   capturedLogs: CapturedLogs;
   computeLogs: ComputeLogFile;
   locationStateChangeEvents: LocationStateChangeSubscription;
   pipelineRunLogs: PipelineRunLogsSubscriptionPayload;
 };
 
-export type WebserverSubscriptionCapturedLogsArgs = {
+export type DagitSubscriptionCapturedLogsArgs = {
   cursor?: InputMaybe<Scalars['String']>;
   logKey: Array<Scalars['String']>;
 };
 
-export type WebserverSubscriptionComputeLogsArgs = {
+export type DagitSubscriptionComputeLogsArgs = {
   cursor?: InputMaybe<Scalars['String']>;
   ioType: ComputeIoType;
   runId: Scalars['ID'];
   stepKey: Scalars['String'];
 };
 
-export type WebserverSubscriptionPipelineRunLogsArgs = {
+export type DagitSubscriptionPipelineRunLogsArgs = {
   cursor?: InputMaybe<Scalars['String']>;
   runId: Scalars['ID'];
 };
@@ -5176,14 +5176,14 @@ export const buildDaemonStatus = (
   };
 };
 
-export const buildWebserverMutation = (
-  overrides?: Partial<WebserverMutation>,
+export const buildDagitMutation = (
+  overrides?: Partial<DagitMutation>,
   _relationshipsToOmit: Set<string> = new Set(),
-): {__typename: 'WebserverMutation'} & WebserverMutation => {
+): {__typename: 'DagitMutation'} & DagitMutation => {
   const relationshipsToOmit: Set<string> = new Set(_relationshipsToOmit);
-  relationshipsToOmit.add('WebserverMutation');
+  relationshipsToOmit.add('DagitMutation');
   return {
-    __typename: 'WebserverMutation',
+    __typename: 'DagitMutation',
     addDynamicPartition:
       overrides && overrides.hasOwnProperty('addDynamicPartition')
         ? overrides.addDynamicPartition!
@@ -5344,14 +5344,14 @@ export const buildWebserverMutation = (
   };
 };
 
-export const buildWebserverSubscription = (
-  overrides?: Partial<WebserverSubscription>,
+export const buildDagitSubscription = (
+  overrides?: Partial<DagitSubscription>,
   _relationshipsToOmit: Set<string> = new Set(),
-): {__typename: 'WebserverSubscription'} & WebserverSubscription => {
+): {__typename: 'DagitSubscription'} & DagitSubscription => {
   const relationshipsToOmit: Set<string> = new Set(_relationshipsToOmit);
-  relationshipsToOmit.add('WebserverSubscription');
+  relationshipsToOmit.add('DagitSubscription');
   return {
-    __typename: 'WebserverSubscription',
+    __typename: 'DagitSubscription',
     capturedLogs:
       overrides && overrides.hasOwnProperty('capturedLogs')
         ? overrides.capturedLogs!

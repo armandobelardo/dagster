@@ -38,7 +38,7 @@ services:
     expose:
       - "3000"
     entrypoint:
-      - dagit
+      - dagster-webserver
       - -h
       - "0.0.0.0"
       - -p

@@ -14,6 +14,6 @@ export type SetAutoMaterializePausedMutationVariables = Types.Exact<{
 }>;
 
 export type SetAutoMaterializePausedMutation = {
-  __typename: 'WebserverMutation';
+  __typename: 'DagitMutation';
   setAutoMaterializePaused: boolean;
 };

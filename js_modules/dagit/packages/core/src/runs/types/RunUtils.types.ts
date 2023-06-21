@@ -7,7 +7,7 @@ export type LaunchPipelineExecutionMutationVariables = Types.Exact<{
 }>;
 
 export type LaunchPipelineExecutionMutation = {
-  __typename: 'WebserverMutation';
+  __typename: 'DagitMutation';
   launchPipelineExecution:
     | {__typename: 'ConflictingExecutionParamsError'}
     | {__typename: 'InvalidOutputError'}
@@ -47,7 +47,7 @@ export type DeleteMutationVariables = Types.Exact<{
 }>;
 
 export type DeleteMutation = {
-  __typename: 'WebserverMutation';
+  __typename: 'DagitMutation';
   deletePipelineRun:
     | {__typename: 'DeletePipelineRunSuccess'}
     | {
@@ -70,7 +70,7 @@ export type TerminateMutationVariables = Types.Exact<{
 }>;
 
 export type TerminateMutation = {
-  __typename: 'WebserverMutation';
+  __typename: 'DagitMutation';
   terminatePipelineExecution:
     | {
         __typename: 'PythonError';
@@ -97,7 +97,7 @@ export type LaunchPipelineReexecutionMutationVariables = Types.Exact<{
 }>;
 
 export type LaunchPipelineReexecutionMutation = {
-  __typename: 'WebserverMutation';
+  __typename: 'DagitMutation';
   launchPipelineReexecution:
     | {__typename: 'ConflictingExecutionParamsError'}
     | {__typename: 'InvalidOutputError'}

@@ -15,7 +15,7 @@ def _wait_for_dagit_running(dagit_port):
     start_time = time.time()
     while True:
         try:
-            dagit_json = requests.get(f"http://localhost:{dagit_port}/dagit_info").json()
+            dagit_json = requests.get(f"http://localhost:{dagit_port}/webserver_info").json()
             if dagit_json:
                 return
         except:
@@ -41,7 +41,7 @@ def test_dagster_dev_command_workspace():
                             os.path.dirname(__file__),
                             "workspace.yaml",
                         ),
-                        "--dagit-port",
+                        "--webserver-port",
                         str(dagit_port),
                     ],
                     cwd=tempdir,
@@ -81,9 +81,9 @@ def test_dagster_dev_command_no_dagster_home():
                         ),
                         "--working-directory",
                         os.path.dirname(__file__),
-                        "--dagit-port",
+                        "--webserver-port",
                         str(dagit_port),
-                        "--dagit-host",
+                        "--webserver-host",
                         "127.0.0.1",
                     ],
                     cwd=tempdir,

@@ -7,7 +7,7 @@ export type StartSensorMutationVariables = Types.Exact<{
 }>;
 
 export type StartSensorMutation = {
-  __typename: 'WebserverMutation';
+  __typename: 'DagitMutation';
   startSensor:
     | {
         __typename: 'PythonError';
@@ -34,7 +34,7 @@ export type StopRunningSensorMutationVariables = Types.Exact<{
 }>;
 
 export type StopRunningSensorMutation = {
-  __typename: 'WebserverMutation';
+  __typename: 'DagitMutation';
   stopSensor:
     | {
         __typename: 'PythonError';
